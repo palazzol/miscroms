@@ -1,0 +1,2107 @@
+F000: 52 3A       MOV %>3A,B
+F002: 0D          LDSP
+F003: 88 20 00 2D MOVD %>2000,R45
+F007: A2 AA 00    MOVP %>AA,P0
+F00A: A2 0A 10    MOVP %>0A,P16
+F00D: 91 04       MOVP P4,B
+F00F: 53 07       AND %>7,B
+F011: 5D 00       CMP %>0,B
+F013: E2 39       JEQ $F04E
+F015: 73 7F 0A    AND %>7F,R10
+F018: 80 04       MOVP P4,A
+F01A: 23 08       AND %>8,A
+F01C: 2D 00       CMP %>0,A
+F01E: E2 07       JEQ $F027
+F020: 8A 10 00    LDA @>1000
+F023: 82 11       MOVP A,P17
+F025: E0 03       JMP $F02A
+F027: A2 CB 11    MOVP %>CB,P17
+F02A: A2 15 11    MOVP %>15,P17
+F02D: AA F0 3E    LDA @>F03E(B)
+F030: B8          PUSH A
+F031: AA F0 46    LDA @>F046(B)
+F034: C9          POP B
+F035: 92 15       MOVP B,P21
+F037: 82 14       MOVP A,P20
+F039: A4 01 10    ORP %>01,P16
+F03C: E0 1A       JMP $F058
+F03E: FF          TRAP 0
+F03F: 40          Illegal Opcode
+F040: 43 40 43    AND R64,R67
+F043: 40          Illegal Opcode
+F044: 40          Illegal Opcode
+F045: 40          Illegal Opcode
+F046: FF          TRAP 0
+F047: 20          Illegal Opcode
+F048: 57 07 C2    BTJZ %>7,B,$F00D
+F04B: 0F          Illegal Opcode
+F04C: 81          Illegal Opcode
+F04D: 03          Illegal Opcode
+F04E: 74 80 0A    OR %>80,R10
+F051: 88 02 00 2F MOVD %>0200,R47
+F055: A4 30 00    ORP %>30,P0
+F058: 91 04       MOVP P4,B
+F05A: 53 10       AND %>10,B
+F05C: 5D 00       CMP %>0,B
+F05E: E2 59       JEQ $F0B9
+F060: 88 30 00 03 MOVD %>3000,R3
+F064: 98 03 29    MOVD R3,R41
+F067: D8 02       PUSH R2
+F069: D2 02       DEC R2
+F06B: 42 02 22    MOV R2,R34
+F06E: 72 FF 23    MOV %>FF,R35
+F071: 78 02 02    ADD %>2,R2
+F074: D5 17       CLR R23
+F076: D3 02       INC R2
+F078: 7D F0 02    CMP %>F0,R2
+F07B: E2 1E       JEQ $F09B
+F07D: D3 17       INC R23
+F07F: 7D 10 17    CMP %>10,R23
+F082: E2 17       JEQ $F09B
+F084: 22 5A       MOV %>5A,A
+F086: 9B 03       STA *R3
+F088: B5          CLR A
+F089: 9A 03       LDA *R3
+F08B: 2D 5A       CMP %>5A,A
+F08D: E6 0C       JNZ $F09B
+F08F: B7          SWAP A
+F090: 9B 03       STA *R3
+F092: B5          CLR A
+F093: 9A 03       LDA *R3
+F095: 2D A5       CMP %>A5,A
+F097: E6 02       JNZ $F09B
+F099: E0 DB       JMP $F076
+F09B: 42 02 26    MOV R2,R38
+F09E: D5 27       CLR R39
+F0A0: 7A 01 02    SUB %>1,R2
+F0A3: 98 03 07    MOVD R3,R7
+F0A6: 98 07 2B    MOVD R7,R43
+F0A9: 7A 01 02    SUB %>1,R2
+F0AC: 42 02 24    MOV R2,R36
+F0AF: 72 FF 25    MOV %>FF,R37
+F0B2: D9 02       POP R2
+F0B4: 72 DF 32    MOV %>DF,R50
+F0B7: E0 1D       JMP $F0D6
+F0B9: 88 00 51 29 MOVD %>0051,R41
+F0BD: 88 00 65 25 MOVD %>0065,R37
+F0C1: 88 00 50 23 MOVD %>0050,R35
+F0C5: 88 00 66 2B MOVD %>0066,R43
+F0C9: 88 00 80 27 MOVD %>0080,R39
+F0CD: 98 29 03    MOVD R41,R3
+F0D0: 98 2B 07    MOVD R43,R7
+F0D3: 72 01 32    MOV %>1,R50
+F0D6: 88 00 00 13 MOVD %>0000,R19
+F0DA: C5          CLR B
+F0DB: 78 10 12    ADD %>10,R18
+F0DE: 7D F0 12    CMP %>F0,R18
+F0E1: E2 17       JEQ $F0FA
+F0E3: 9A 13       LDA *R19
+F0E5: AD F5 26    CMPA @>F526(B)
+F0E8: E6 F0       JNZ $F0DA
+F0EA: C3          INC B
+F0EB: 5D 05       CMP %>5,B
+F0ED: E2 04       JEQ $F0F3
+F0EF: D3 13       INC R19
+F0F1: E0 F0       JMP $F0E3
+F0F3: D3 13       INC R19
+F0F5: 98 13 31    MOVD R19,R49
+F0F8: 9C 31       BR *R49
+F0FA: 72 00 30    MOV %>0,R48
+F0FD: 8E F1 43    CALL $F143
+F100: 8E F1 AC    CALL $F1AC
+F103: E0 0B       JMP $F110
+F105: 76 01 0B 07 BTJO %>1,R11,$F110
+F109: 73 EF 0B    AND %>EF,R11
+F10C: 77 10 0B FC BTJZ %>10,R11,$F10C
+F110: 4D 03 05    CMP R3,R5
+F113: E6 07       JNZ $F11C
+F115: 4D 02 04    CMP R2,R4
+F118: E6 02       JNZ $F11C
+F11A: E0 E9       JMP $F105
+F11C: 7D 00 38    CMP %>0,R56
+F11F: E6 05       JNZ $F126
+F121: 7D 00 39    CMP %>0,R57
+F124: E2 F6       JEQ $F11C
+F126: 77 08 0B 09 BTJZ %>8,R11,$F133
+F12A: 7D 01 32    CMP %>1,R50
+F12D: E2 11       JEQ $F140
+F12F: 76 08 0B FC BTJO %>8,R11,$F12F
+F133: 8E F3 E7    CALL $F3E7
+F136: 4D 07 09    CMP R7,R9
+F139: E2 D5       JEQ $F110
+F13B: A4 01 00    ORP %>01,P0
+F13E: E0 D0       JMP $F110
+F140: 8C F1 F0    BR $F1F0
+F143: 73 00 0B    AND %>0,R11
+F146: D5 37       CLR R55
+F148: D5 38       CLR R56
+F14A: D5 39       CLR R57
+F14C: A4 01 06    ORP %>01,P6
+F14F: 98 29 03    MOVD R41,R3
+F152: 98 2B 07    MOVD R43,R7
+F155: 22 20       MOV %>20,A
+F157: 9B 03       STA *R3
+F159: 8E F7 2B    CALL $F72B
+F15C: 98 03 05    MOVD R3,R5
+F15F: D8 03       PUSH R3
+F161: D8 07       PUSH R7
+F163: D8 06       PUSH R6
+F165: D2 03       DEC R3
+F167: 4A 03 07    SUB R3,R7
+F16A: 4B 02 06    SBB R2,R6
+F16D: 98 07 34    MOVD R7,R52
+F170: DB 34       DECD R52
+F172: B0          CLRC
+F173: DD 06       RRC R6
+F175: DD 07       RRC R7
+F177: 98 07 1F    MOVD R7,R31
+F17A: DD 06       RRC R6
+F17C: DD 07       RRC R7
+F17E: B0          CLRC
+F17F: DD 06       RRC R6
+F181: DD 07       RRC R7
+F183: 98 07 21    MOVD R7,R33
+F186: D9 06       POP R6
+F188: D9 07       POP R7
+F18A: D9 03       POP R3
+F18C: 98 07 09    MOVD R7,R9
+F18F: 98 03 19    MOVD R3,R25
+F192: 98 27 36    MOVD R39,R54
+F195: 4A 2B 36    SUB R43,R54
+F198: 4B 2A 35    SBB R42,R53
+F19B: 91 04       MOVP P4,B
+F19D: 53 80       AND %>80,B
+F19F: 5D 00       CMP %>0,B
+F1A1: E2 03       JEQ $F1A6
+F1A3: 74 01 0B    OR %>1,R11
+F1A6: 05          EINT
+F1A7: 0A          RETS
+F1A8: 4F 2D 4B    DSB R45,R75
+F1AB: 0D          LDSP
+F1AC: 73 F9 0A    AND %>F9,R10
+F1AF: C5          CLR B
+F1B0: AA F1 A8    LDA @>F1A8(B)
+F1B3: 8E F1 E2    CALL $F1E2
+F1B6: C3          INC B
+F1B7: 5D 04       CMP %>4,B
+F1B9: E6 F5       JNZ $F1B0
+F1BB: 0A          RETS
+F1BC: A6 02 11 01 BTJOP %>02,P17,$F1C1
+F1C0: 0B          RETI
+F1C1: B8          PUSH A
+F1C2: 76 80 0A 0B BTJO %>80,R10,$F1D1
+F1C6: A3 FE 10    ANDP %>FE,P16
+F1C9: A7 02 11 FC BTJZP %>02,P17,$F1C9
+F1CD: 80 16       MOVP P22,A
+F1CF: E0 05       JMP $F1D6
+F1D1: A3 EF 00    ANDP %>EF,P0
+F1D4: 9A 2F       LDA *R47
+F1D6: 8E F1 E2    CALL $F1E2
+F1D9: B9          POP A
+F1DA: 76 20 0B 03 BTJO %>20,R11,$F1E1
+F1DE: 8E F2 8C    CALL $F28C
+F1E1: 0B          RETI
+F1E2: C8          PUSH B
+F1E3: D8 0A       PUSH R10
+F1E5: D8 0C       PUSH R12
+F1E7: D8 0D       PUSH R13
+F1E9: 73 F9 0A    AND %>F9,R10
+F1EC: 2D 1B       CMP %>1B,A
+F1EE: E6 14       JNZ $F204
+F1F0: A3 FE 00    ANDP %>FE,P0
+F1F3: 8E F1 43    CALL $F143
+F1F6: 52 3A       MOV %>3A,B
+F1F8: 0D          LDSP
+F1F9: 98 2D 1B    MOVD R45,R27
+F1FC: 9B 1B       STA *R27
+F1FE: 8E F2 8C    CALL $F28C
+F201: 8C F1 05    BR $F105
+F204: 2D 12       CMP %>12,A
+F206: E6 19       JNZ $F221
+F208: 76 01 0B 12 BTJO %>1,R11,$F21E
+F20C: 4A 19 03    SUB R25,R3
+F20F: 4B 18 02    SBB R24,R2
+F212: 4A 03 34    SUB R3,R52
+F215: 4B 02 33    SBB R2,R51
+F218: 98 19 03    MOVD R25,R3
+F21B: 72 01 39    MOV %>1,R57
+F21E: 8C F2 84    BR $F284
+F221: 2D 08       CMP %>8,A
+F223: E6 23       JNZ $F248
+F225: 4D 02 04    CMP R2,R4
+F228: E6 05       JNZ $F22F
+F22A: 4D 03 05    CMP R3,R5
+F22D: E2 55       JEQ $F284
+F22F: D8 03       PUSH R3
+F231: D8 02       PUSH R2
+F233: 98 05 03    MOVD R5,R3
+F236: 8E F7 3B    CALL $F73B
+F239: 98 03 05    MOVD R3,R5
+F23C: D9 02       POP R2
+F23E: D9 03       POP R3
+F240: D3 34       INC R52
+F242: E7 40       JL $F284
+F244: D3 33       INC R51
+F246: E0 3C       JMP $F284
+F248: 2D 27       CMP %>27,A
+F24A: E2 26       JEQ $F272
+F24C: 2D 7B       CMP %>7B,A
+F24E: E4 0C       JP $F25C
+F250: 2D 30       CMP %>30,A
+F252: E1 08       JN $F25C
+F254: 2D 3A       CMP %>3A,A
+F256: E1 1A       JN $F272
+F258: 2D 41       CMP %>41,A
+F25A: E5 16       JPI $F272
+F25C: 76 01 0B 07 BTJO %>1,R11,$F267
+F260: 2D 0D       CMP %>D,A
+F262: E6 06       JNZ $F26A
+F264: 74 10 0B    OR %>10,R11
+F267: 98 03 19    MOVD R3,R25
+F26A: 24 80       OR %>80,A
+F26C: D3 39       INC R57
+F26E: E7 02       JL $F272
+F270: D3 38       INC R56
+F272: 8E F2 98    CALL $F298
+F275: 77 20 0B 0B BTJZ %>20,R11,$F284
+F279: 22 8D       MOV %>8D,A
+F27B: D3 39       INC R57
+F27D: E7 02       JL $F281
+F27F: D3 38       INC R56
+F281: 8E F2 98    CALL $F298
+F284: D9 0D       POP R13
+F286: D9 0C       POP R12
+F288: D9 0A       POP R10
+F28A: C9          POP B
+F28B: 0A          RETS
+F28C: 77 80 0A 04 BTJZ %>80,R10,$F294
+F290: A4 10 00    ORP %>10,P0
+F293: 0A          RETS
+F294: A4 01 10    ORP %>01,P16
+F297: 0A          RETS
+F298: 76 02 0A 2E BTJO %>2,R10,$F2CA
+F29C: 76 04 0A 07 BTJO %>4,R10,$F2A7
+F2A0: 98 05 0D    MOVD R5,R13
+F2A3: DB 34       DECD R52
+F2A5: E0 05       JMP $F2AC
+F2A7: 98 09 0D    MOVD R9,R13
+F2AA: DB 36       DECD R54
+F2AC: 9B 0D       STA *R13
+F2AE: 8A 00 0D    LDA @>000D
+F2B1: 78 01 0D    ADD %>1,R13
+F2B4: 79 00 0C    ADC %>0,R12
+F2B7: 8E F3 11    CALL $F311
+F2BA: 76 04 0A 07 BTJO %>4,R10,$F2C5
+F2BE: 98 0D 05    MOVD R13,R5
+F2C1: 8E F3 31    CALL $F331
+F2C4: 0A          RETS
+F2C5: 98 0D 09    MOVD R13,R9
+F2C8: E0 F7       JMP $F2C1
+F2CA: 76 04 0A 0B BTJO %>4,R10,$F2D9
+F2CE: 98 03 0D    MOVD R3,R13
+F2D1: 76 02 0B 0D BTJO %>2,R11,$F2E2
+F2D5: D3 37       INC R55
+F2D7: E0 09       JMP $F2E2
+F2D9: 98 07 0D    MOVD R7,R13
+F2DC: D3 36       INC R54
+F2DE: E7 02       JL $F2E2
+F2E0: D3 35       INC R53
+F2E2: 9A 0D       LDA *R13
+F2E4: 76 04 0A 0B BTJO %>4,R10,$F2F3
+F2E8: 27 80 05    BTJZ %>80,A,$F2F0
+F2EB: 74 01 0A    OR %>1,R10
+F2EE: E0 03       JMP $F2F3
+F2F0: 73 FE 0A    AND %>FE,R10
+F2F3: B8          PUSH A
+F2F4: 8A 00 0D    LDA @>000D
+F2F7: 78 01 0D    ADD %>1,R13
+F2FA: 79 00 0C    ADC %>0,R12
+F2FD: 8E F3 11    CALL $F311
+F300: 76 04 0A 05 BTJO %>4,R10,$F309
+F304: 98 0D 03    MOVD R13,R3
+F307: B9          POP A
+F308: 0A          RETS
+F309: 98 0D 07    MOVD R13,R7
+F30C: 8E F3 35    CALL $F335
+F30F: B9          POP A
+F310: 0A          RETS
+F311: 76 04 0A 0E BTJO %>4,R10,$F323
+F315: 4D 2B 0D    CMP R43,R13
+F318: E6 08       JNZ $F322
+F31A: 4D 2A 0C    CMP R42,R12
+F31D: E6 03       JNZ $F322
+F31F: 98 29 0D    MOVD R41,R13
+F322: 0A          RETS
+F323: 4D 27 0D    CMP R39,R13
+F326: E6 08       JNZ $F330
+F328: 4D 26 0C    CMP R38,R12
+F32B: E6 03       JNZ $F330
+F32D: 98 2B 0D    MOVD R43,R13
+F330: 0A          RETS
+F331: 77 04 0A 12 BTJZ %>4,R10,$F347
+F335: 7D 01 35    CMP %>1,R53
+F338: E2 09       JEQ $F343
+F33A: 4D 32 36    CMP R50,R54
+F33D: E4 04       JP $F343
+F33F: 74 08 0B    OR %>8,R11
+F342: 0A          RETS
+F343: 73 F7 0B    AND %>F7,R11
+F346: 0A          RETS
+F347: 7D 00 33    CMP %>0,R51
+F34A: E4 0A       JP $F356
+F34C: 7D 01 34    CMP %>1,R52
+F34F: E4 05       JP $F356
+F351: 74 20 0B    OR %>20,R11
+F354: E0 1B       JMP $F371
+F356: 4D 1E 33    CMP R30,R51
+F359: E1 07       JN $F362
+F35B: E4 1B       JP $F378
+F35D: 4D 1F 34    CMP R31,R52
+F360: E5 16       JPI $F378
+F362: 4D 20 33    CMP R32,R51
+F365: E4 1D       JP $F384
+F367: E1 05       JN $F36E
+F369: 4D 21 34    CMP R33,R52
+F36C: E4 16       JP $F384
+F36E: 74 04 0B    OR %>4,R11
+F371: A3 FE 06    ANDP %>FE,P6
+F374: A2 13 17    MOVP %>13,P23
+F377: 0A          RETS
+F378: 73 DB 0B    AND %>DB,R11
+F37B: 8E F2 8C    CALL $F28C
+F37E: A4 01 06    ORP %>01,P6
+F381: A2 11 17    MOVP %>11,P23
+F384: 0A          RETS
+F385: A3 FE 00    ANDP %>FE,P0
+F388: B8          PUSH A
+F389: C8          PUSH B
+F38A: D8 0A       PUSH R10
+F38C: D8 0C       PUSH R12
+F38E: D8 0D       PUSH R13
+F390: 74 06 0A    OR %>6,R10
+F393: 8E F2 98    CALL $F298
+F396: 98 2D 1B    MOVD R45,R27
+F399: 48 00 1B    ADD R0,R27
+F39C: 9B 1B       STA *R27
+F39E: D9 0D       POP R13
+F3A0: D9 0C       POP R12
+F3A2: D9 0A       POP R10
+F3A4: C9          POP B
+F3A5: B9          POP A
+F3A6: 4D 07 09    CMP R7,R9
+F3A9: E2 03       JEQ $F3AE
+F3AB: A4 01 00    ORP %>01,P0
+F3AE: 0B          RETI
+F3AF: 2D 30       CMP %>30,A
+F3B1: E5 02       JPI $F3B5
+F3B3: E0 2A       JMP $F3DF
+F3B5: 2D 3A       CMP %>3A,A
+F3B7: E5 08       JPI $F3C1
+F3B9: 88 FF 8E 15 MOVD %>FF8E,R21
+F3BD: 73 DF 0A    AND %>DF,R10
+F3C0: 0A          RETS
+F3C1: 2D 41       CMP %>41,A
+F3C3: E5 02       JPI $F3C7
+F3C5: E0 18       JMP $F3DF
+F3C7: 2D 5B       CMP %>5B,A
+F3C9: E5 04       JPI $F3CF
+F3CB: 74 20 0A    OR %>20,R10
+F3CE: 0A          RETS
+F3CF: 2D 61       CMP %>61,A
+F3D1: E5 02       JPI $F3D5
+F3D3: E0 0A       JMP $F3DF
+F3D5: 2D 7B       CMP %>7B,A
+F3D7: E5 06       JPI $F3DF
+F3D9: 2A 20       SUB %>20,A
+F3DB: 74 20 0A    OR %>20,R10
+F3DE: 0A          RETS
+F3DF: 73 DF 0A    AND %>DF,R10
+F3E2: 88 F7 8C 15 MOVD %>F78C,R21
+F3E6: 0A          RETS
+F3E7: 7D 00 30    CMP %>0,R48
+F3EA: E2 02       JEQ $F3EE
+F3EC: 9C 31       BR *R49
+F3EE: 98 03 11    MOVD R3,R17
+F3F1: 8E F7 4B    CALL $F74B
+F3F4: 8E F7 0F    CALL $F70F
+F3F7: 77 01 0A 05 BTJZ %>1,R10,$F400
+F3FB: 74 80 0B    OR %>80,R11
+F3FE: E0 03       JMP $F403
+F400: 73 7F 0B    AND %>7F,R11
+F403: 8E F3 AF    CALL $F3AF
+F406: 77 20 0A 11 BTJZ %>20,R10,$F41B
+F40A: C5          CLR B
+F40B: 2A 41       SUB %>41,A
+F40D: 2C 02       MPY %>2,A
+F40F: 58 02       ADD %>2,B
+F411: AA FF BC    LDA @>FFBC(B)
+F414: D0 14       MOV A,R20
+F416: AA FF BD    LDA @>FFBD(B)
+F419: D0 15       MOV A,R21
+F41B: 52 01       MOV %>1,B
+F41D: 8E F4 88    CALL $F488
+F420: 8E F4 C2    CALL $F4C2
+F423: 76 10 0A 40 BTJO %>10,R10,$F467
+F427: 98 11 1D    MOVD R17,R29
+F42A: 73 BF 0A    AND %>BF,R10
+F42D: 8E F5 64    CALL $F564
+F430: 76 10 0A 33 BTJO %>10,R10,$F467
+F434: 8E F4 7E    CALL $F47E
+F437: 74 40 0A    OR %>40,R10
+F43A: 8E F5 64    CALL $F564
+F43D: 76 10 0A 39 BTJO %>10,R10,$F47A
+F441: 48 37 34    ADD R55,R52
+F444: 79 00 33    ADC %>0,R51
+F447: D5 37       CLR R55
+F449: 73 FD 0B    AND %>FD,R11
+F44C: 52 02       MOV %>2,B
+F44E: 8E F4 88    CALL $F488
+F451: 8E F4 9E    CALL $F49E
+F454: 98 0F 03    MOVD R15,R3
+F457: 98 03 11    MOVD R3,R17
+F45A: 8E F7 4B    CALL $F74B
+F45D: 77 80 0B 93 BTJZ %>80,R11,$F3F4
+F461: DB 39       DECD R57
+F463: 8E F3 47    CALL $F347
+F466: 0A          RETS
+F467: D3 15       INC R21
+F469: E7 02       JL $F46D
+F46B: D3 14       INC R20
+F46D: 52 02       MOV %>2,B
+F46F: 8E F4 88    CALL $F488
+F472: 72 01 37    MOV %>1,R55
+F475: 73 FD 0B    AND %>FD,R11
+F478: E0 A6       JMP $F420
+F47A: 52 03       MOV %>3,B
+F47C: E0 F1       JMP $F46F
+F47E: 9A 15       LDA *R21
+F480: 27 40 01    BTJZ %>40,A,$F484
+F483: 0A          RETS
+F484: DB 15       DECD R21
+F486: E0 F6       JMP $F47E
+F488: D5 17       CLR R23
+F48A: 9A 15       LDA *R21
+F48C: 27 40 07    BTJZ %>40,A,$F496
+F48F: D3 17       INC R23
+F491: 3D 17       CMP R23,B
+F493: E6 01       JNZ $F496
+F495: 0A          RETS
+F496: D3 15       INC R21
+F498: E7 02       JL $F49C
+F49A: D3 14       INC R20
+F49C: E0 EC       JMP $F48A
+F49E: D5 17       CLR R23
+F4A0: 9A 15       LDA *R21
+F4A2: 2D FF       CMP %>FF,A
+F4A4: E2 1B       JEQ $F4C1
+F4A6: 27 80 02    BTJZ %>80,A,$F4AB
+F4A9: D3 17       INC R23
+F4AB: 23 3F       AND %>3F,A
+F4AD: 73 FD 0A    AND %>FD,R10
+F4B0: 74 04 0A    OR %>4,R10
+F4B3: 8E F2 98    CALL $F298
+F4B6: D3 15       INC R21
+F4B8: E7 02       JL $F4BC
+F4BA: D3 14       INC R20
+F4BC: 7D 01 17    CMP %>1,R23
+F4BF: E6 DD       JNZ $F49E
+F4C1: 0A          RETS
+F4C2: 98 03 13    MOVD R3,R19
+F4C5: 73 F7 0A    AND %>F7,R10
+F4C8: 77 20 0A 08 BTJZ %>20,R10,$F4D4
+F4CC: 9A 15       LDA *R21
+F4CE: 2D FF       CMP %>FF,A
+F4D0: E6 0B       JNZ $F4DD
+F4D2: E0 2E       JMP $F502
+F4D4: 2D FF       CMP %>FF,A
+F4D6: E2 2A       JEQ $F502
+F4D8: 8E F7 3B    CALL $F73B
+F4DB: D2 37       DEC R55
+F4DD: 8E F7 0F    CALL $F70F
+F4E0: 2D 61       CMP %>61,A
+F4E2: E1 02       JN $F4E6
+F4E4: 2A 20       SUB %>20,A
+F4E6: 2A 20       SUB %>20,A
+F4E8: C0          MOV A,B
+F4E9: 9A 15       LDA *R21
+F4EB: 27 80 03    BTJZ %>80,A,$F4F1
+F4EE: 74 08 0A    OR %>8,R10
+F4F1: 23 3F       AND %>3F,A
+F4F3: 3D 00       CMP R0,B
+F4F5: E2 07       JEQ $F4FE
+F4F7: 74 10 0A    OR %>10,R10
+F4FA: 98 13 03    MOVD R19,R3
+F4FD: 0A          RETS
+F4FE: 77 08 0A 0A BTJZ %>8,R10,$F50C
+F502: 98 03 0F    MOVD R3,R15
+F505: 73 EF 0A    AND %>EF,R10
+F508: 74 02 0B    OR %>2,R11
+F50B: 0A          RETS
+F50C: D3 15       INC R21
+F50E: E7 CD       JL $F4DD
+F510: D3 14       INC R20
+F512: E0 C9       JMP $F4DD
+F514: 32 16       MOV R22,B
+F516: 5D 3A       CMP %>3A,B
+F518: E4 0A       JP $F524
+F51A: 5D 21       CMP %>21,B
+F51C: E1 06       JN $F524
+F51E: 5A 21       SUB %>21,B
+F520: AA F5 26    LDA @>F526(B)
+F523: 0A          RETS
+F524: B5          CLR A
+F525: 0A          RETS
+F526: 80 48       MOVP P72,A
+F528: 28 58       ADD %>58,A
+F52A: 85 08       XORP A,P8
+F52C: 68          ADD B,A
+F52D: 08          POP ST
+F52E: 84 78       ORP A,P120
+F530: 08          POP ST
+F531: 58 48       ADD %>48,B
+F533: 58 82       ADD %>82,B
+F535: 08          POP ST
+F536: 08          POP ST
+F537: 58 38       ADD %>38,B
+F539: 18 82       ADD R130,A
+F53B: 48 48 28    ADD R72,R40
+F53E: 84 78       ORP A,P120
+F540: 8C F6 9E    BR $F69E
+F543: 8C F6 B4    BR $F6B4
+F546: 8C F6 01    BR $F601
+F549: 8C F6 D7    BR $F6D7
+F54C: 8C F6 E2    BR $F6E2
+F54F: 8C F6 BF    BR $F6BF
+F552: 8C F6 C7    BR $F6C7
+F555: 8C F5 EA    BR $F5EA
+F558: 8C F5 B9    BR $F5B9
+F55B: 8C F6 CF    BR $F6CF
+F55E: 8C F5 B0    BR $F5B0
+F561: 8C F5 CC    BR $F5CC
+F564: 76 40 0A 0A BTJO %>40,R10,$F572
+F568: 52 40       MOV %>40,B
+F56A: D3 15       INC R21
+F56C: E7 02       JL $F570
+F56E: D3 14       INC R20
+F570: E0 04       JMP $F576
+F572: 52 80       MOV %>80,B
+F574: DB 15       DECD R21
+F576: 9A 15       LDA *R21
+F578: 67 12       BTJZ B,A,$F58D
+F57A: 76 40 0A 04 BTJO %>40,R10,$F582
+F57E: DB 15       DECD R21
+F580: E0 06       JMP $F588
+F582: D3 15       INC R21
+F584: E7 02       JL $F588
+F586: D3 14       INC R20
+F588: 73 EF 0A    AND %>EF,R10
+F58B: 0A          RETS
+F58C: 8E F7 5B    CALL $F75B
+F58F: 9A 15       LDA *R21
+F591: 2D 15       CMP %>15,A
+F593: E1 0F       JN $F5A4
+F595: 4D 00 16    CMP R0,R22
+F598: E2 CA       JEQ $F564
+F59A: 74 10 0A    OR %>10,R10
+F59D: 98 13 03    MOVD R19,R3
+F5A0: 98 1D 11    MOVD R29,R17
+F5A3: 0A          RETS
+F5A4: 2D 07       CMP %>7,A
+F5A6: E2 ED       JEQ $F595
+F5A8: C0          MOV A,B
+F5A9: 5A 09       SUB %>9,B
+F5AB: 5C 03       MPY %>3,B
+F5AD: AC F5 40    BR @>F540(B)
+F5B0: 8E F5 14    CALL $F514
+F5B3: 2D 00       CMP %>0,A
+F5B5: E2 47       JEQ $F5FE
+F5B7: E0 E1       JMP $F59A
+F5B9: 8E F5 14    CALL $F514
+F5BC: 26 08 02    BTJO %>8,A,$F5C1
+F5BF: E0 D9       JMP $F59A
+F5C1: 8E F7 5B    CALL $F75B
+F5C4: 8E F5 14    CALL $F514
+F5C7: 26 08 F7    BTJO %>8,A,$F5C1
+F5CA: E0 2F       JMP $F5FB
+F5CC: 8E F5 14    CALL $F514
+F5CF: 26 80 02    BTJO %>80,A,$F5D4
+F5D2: E0 C6       JMP $F59A
+F5D4: 8E F7 5B    CALL $F75B
+F5D7: 8E F5 14    CALL $F514
+F5DA: 26 80 02    BTJO %>80,A,$F5DF
+F5DD: E0 BB       JMP $F59A
+F5DF: 8E F7 5B    CALL $F75B
+F5E2: 8E F5 14    CALL $F514
+F5E5: 26 80 F7    BTJO %>80,A,$F5DF
+F5E8: E0 11       JMP $F5FB
+F5EA: 8E F5 14    CALL $F514
+F5ED: 26 08 02    BTJO %>8,A,$F5F2
+F5F0: E0 09       JMP $F5FB
+F5F2: 8E F7 5B    CALL $F75B
+F5F5: 8E F5 14    CALL $F514
+F5F8: 26 08 F7    BTJO %>8,A,$F5F2
+F5FB: 8E F7 7F    CALL $F77F
+F5FE: 8C F5 64    BR $F564
+F601: 8E F5 14    CALL $F514
+F604: 26 01 50    BTJO %>1,A,$F657
+F607: 7D 29 16    CMP %>29,R22
+F60A: E2 30       JEQ $F63C
+F60C: 7D 2D 16    CMP %>2D,R22
+F60F: E2 07       JEQ $F618
+F611: 7D 2F 16    CMP %>2F,R22
+F614: E2 1D       JEQ $F633
+F616: E0 71       JMP $F689
+F618: 8E F7 0F    CALL $F70F
+F61B: 2D 45       CMP %>45,A
+F61D: E2 02       JEQ $F621
+F61F: E0 68       JMP $F689
+F621: 8E F7 0F    CALL $F70F
+F624: 2D 4E       CMP %>4E,A
+F626: E2 02       JEQ $F62A
+F628: E0 5F       JMP $F689
+F62A: 8E F7 0F    CALL $F70F
+F62D: 2D 54       CMP %>54,A
+F62F: E2 1D       JEQ $F64E
+F631: E0 56       JMP $F689
+F633: 8E F7 0F    CALL $F70F
+F636: 2D 52       CMP %>52,A
+F638: E2 14       JEQ $F64E
+F63A: E0 4D       JMP $F689
+F63C: 8E F7 0F    CALL $F70F
+F63F: 2D 4E       CMP %>4E,A
+F641: E2 02       JEQ $F645
+F643: E0 44       JMP $F689
+F645: 8E F7 0F    CALL $F70F
+F648: 2D 47       CMP %>47,A
+F64A: E2 02       JEQ $F64E
+F64C: E0 3B       JMP $F689
+F64E: 8E F6 8C    CALL $F68C
+F651: 76 20 0A 34 BTJO %>20,R10,$F689
+F655: E0 65       JMP $F6BC
+F657: 8E F7 0F    CALL $F70F
+F65A: 2D 52       CMP %>52,A
+F65C: E6 0C       JNZ $F66A
+F65E: 8E F7 0F    CALL $F70F
+F661: 2D 53       CMP %>53,A
+F663: E2 E9       JEQ $F64E
+F665: 8E F7 3B    CALL $F73B
+F668: E0 E4       JMP $F64E
+F66A: 2D 53       CMP %>53,A
+F66C: E2 E0       JEQ $F64E
+F66E: 2D 44       CMP %>44,A
+F670: E2 DC       JEQ $F64E
+F672: 2D 4C       CMP %>4C,A
+F674: E2 0C       JEQ $F682
+F676: 8E F7 3B    CALL $F73B
+F679: 8E F6 8C    CALL $F68C
+F67C: 77 20 0A 3C BTJZ %>20,R10,$F6BC
+F680: E0 07       JMP $F689
+F682: 8E F7 0F    CALL $F70F
+F685: 2D 59       CMP %>59,A
+F687: E2 C5       JEQ $F64E
+F689: 8C F5 9A    BR $F59A
+F68C: 8E F7 0F    CALL $F70F
+F68F: D8 15       PUSH R21
+F691: D8 14       PUSH R20
+F693: 8E F3 AF    CALL $F3AF
+F696: D9 14       POP R20
+F698: D9 15       POP R21
+F69A: 8E F7 3B    CALL $F73B
+F69D: 0A          RETS
+F69E: 8E F5 14    CALL $F514
+F6A1: 26 80 02    BTJO %>80,A,$F6A6
+F6A4: E0 E3       JMP $F689
+F6A6: 8E F7 5B    CALL $F75B
+F6A9: 8E F5 14    CALL $F514
+F6AC: 26 80 F7    BTJO %>80,A,$F6A6
+F6AF: 8E F7 7F    CALL $F77F
+F6B2: E0 08       JMP $F6BC
+F6B4: 8E F5 14    CALL $F514
+F6B7: 26 40 02    BTJO %>40,A,$F6BC
+F6BA: E0 CD       JMP $F689
+F6BC: 8C F5 64    BR $F564
+F6BF: 8E F5 14    CALL $F514
+F6C2: 26 08 F7    BTJO %>8,A,$F6BC
+F6C5: E0 C2       JMP $F689
+F6C7: 8E F5 14    CALL $F514
+F6CA: 26 04 EF    BTJO %>4,A,$F6BC
+F6CD: E0 BA       JMP $F689
+F6CF: 8E F5 14    CALL $F514
+F6D2: 26 02 E7    BTJO %>2,A,$F6BC
+F6D5: E0 B2       JMP $F689
+F6D7: 8E F5 14    CALL $F514
+F6DA: 26 20 DF    BTJO %>20,A,$F6BC
+F6DD: 8E F7 5B    CALL $F75B
+F6E0: E0 0E       JMP $F6F0
+F6E2: 8E F5 14    CALL $F514
+F6E5: 26 10 D4    BTJO %>10,A,$F6BC
+F6E8: 8E F7 5B    CALL $F75B
+F6EB: 7D 34 16    CMP %>34,R22
+F6EE: E2 0C       JEQ $F6FC
+F6F0: 7D 23 16    CMP %>23,R22
+F6F3: E2 07       JEQ $F6FC
+F6F5: 7D 33 16    CMP %>33,R22
+F6F8: E2 02       JEQ $F6FC
+F6FA: E0 8D       JMP $F689
+F6FC: 98 11 03    MOVD R17,R3
+F6FF: 8E F7 2B    CALL $F72B
+F702: 8E F7 2B    CALL $F72B
+F705: 8E F7 0F    CALL $F70F
+F708: 2D 48       CMP %>48,A
+F70A: E2 B0       JEQ $F6BC
+F70C: 8C F5 9A    BR $F59A
+F70F: 74 02 0A    OR %>2,R10
+F712: 73 FB 0A    AND %>FB,R10
+F715: 8E F2 98    CALL $F298
+F718: 23 7F       AND %>7F,A
+F71A: 0A          RETS
+F71B: D3 11       INC R17
+F71D: E7 02       JL $F721
+F71F: D3 10       INC R16
+F721: 98 11 0D    MOVD R17,R13
+F724: 8E F3 15    CALL $F315
+F727: 98 0D 11    MOVD R13,R17
+F72A: 0A          RETS
+F72B: D3 03       INC R3
+F72D: E7 02       JL $F731
+F72F: D3 02       INC R2
+F731: 98 03 0D    MOVD R3,R13
+F734: 8E F3 15    CALL $F315
+F737: 98 0D 03    MOVD R13,R3
+F73A: 0A          RETS
+F73B: DB 03       DECD R3
+F73D: 4D 23 03    CMP R35,R3
+F740: E6 08       JNZ $F74A
+F742: 4D 22 02    CMP R34,R2
+F745: E6 03       JNZ $F74A
+F747: 98 25 03    MOVD R37,R3
+F74A: 0A          RETS
+F74B: DB 11       DECD R17
+F74D: 4D 23 11    CMP R35,R17
+F750: E6 08       JNZ $F75A
+F752: 4D 22 10    CMP R34,R16
+F755: E6 03       JNZ $F75A
+F757: 98 25 11    MOVD R37,R17
+F75A: 0A          RETS
+F75B: 77 40 0A 07 BTJZ %>40,R10,$F766
+F75F: D8 03       PUSH R3
+F761: D8 02       PUSH R2
+F763: 98 11 03    MOVD R17,R3
+F766: 8E F7 0F    CALL $F70F
+F769: 77 40 0A 07 BTJZ %>40,R10,$F774
+F76D: 8E F7 4B    CALL $F74B
+F770: D9 02       POP R2
+F772: D9 03       POP R3
+F774: 2D 61       CMP %>61,A
+F776: E1 02       JN $F77A
+F778: 2A 20       SUB %>20,A
+F77A: 2A 20       SUB %>20,A
+F77C: D0 16       MOV A,R22
+F77E: 0A          RETS
+F77F: 76 40 0A 04 BTJO %>40,R10,$F787
+F783: 8E F7 3B    CALL $F73B
+F786: 0A          RETS
+F787: 8E F7 1B    CALL $F71B
+F78A: 0A          RETS
+F78B: FF          TRAP 0
+F78C: CD          RRC B
+F78D: C0          MOV A,B
+F78E: 0A          RETS
+F78F: 47 B3 EB 09 BTJZ R179,R235,$F79C
+F793: 10          Illegal Opcode
+F794: 0A          RETS
+F795: 25 47       XOR %>47,A
+F797: B3          INC A
+F798: EB          TRAP 20
+F799: 09          STSP
+F79A: 47 B3 EB 47 BTJZ R179,R235,$F7E5
+F79E: B3          INC A
+F79F: F7          TRAP 8
+F7A0: C7          SWAP B
+F7A1: FF          TRAP 0
+F7A2: CC          RR B
+F7A3: C3          INC B
+F7A4: DB C3       DECD R195
+F7A6: C0          MOV A,B
+F7A7: C1          TSTB
+F7A8: CE          RL B
+F7A9: 44 84 C1    OR R132,R193
+F7AC: 44 84 DF    OR R132,R223
+F7AF: 44 84 DA    OR R132,R218
+F7B2: C4          INV B
+F7B3: C5          CLR B
+F7B4: 49 34 37    ADC R52,R55
+F7B7: 37 07 0B    BTJZ R7,B,$F7C5
+F7BA: 0D          LDSP
+F7BB: 80 C4       MOVP P196,A
+F7BD: 61          Illegal Opcode
+F7BE: 18 2D       ADD R45,A
+F7C0: 33 2B       AND R43,B
+F7C2: 80 C3       MOVP P195,A
+F7C4: 78 0F 10    ADD %>F,R16
+F7C7: 1C 33       MPY R51,A
+F7C9: 80 FF       MOVP P255,A
+F7CB: C2          DEC B
+F7CC: 13 FF       AND R255,A
+F7CE: 13 D4       AND R212,A
+F7D0: 63          AND B,A
+F7D1: 28 A5       ADD %>A5,A
+F7D3: 54 02       OR %>2,B
+F7D5: A9          Illegal Opcode
+F7D6: FF          TRAP 0
+F7D7: 13 CF       AND R207,A
+F7D9: 13 72       AND R114,A
+F7DB: A5 13 FB    XORP %>13,P251
+F7DE: 0E          PUSH ST
+F7DF: F3          TRAP 12
+F7E0: 09          STSP
+F7E1: 54 B7       OR %>B7,B
+F7E3: 13 F2       AND R242,A
+F7E5: 2F 4F       DSB %>4F,A
+F7E7: A7 13 FF 0E BTJZP %>13,P255,$F7F9
+F7EB: 32 CF       MOV R207,B
+F7ED: F2          TRAP 13
+F7EE: 09          STSP
+F7EF: EF          TRAP 16
+F7F0: 13 10       AND R16,A
+F7F2: 6E          DAC B,A
+F7F3: B9          POP A
+F7F4: 47 0B 93 67 BTJZ R11,R147,$F85F
+F7F8: 21          Illegal Opcode
+F7F9: 29 AE       ADC %>AE,A
+F7FB: 4F 01 24    DSB R1,R36
+F7FE: 07          SETC
+F7FF: 07          SETC
+F800: 8B FF 37    STA @>FF37
+F803: 21          Illegal Opcode
+F804: CF          RLC B
+F805: F7          TRAP 8
+F806: 57 97 13    BTJZ %>97,B,$F81C
+F809: 10          Illegal Opcode
+F80A: FF          TRAP 0
+F80B: 0E          PUSH ST
+F80C: 0F          Illegal Opcode
+F80D: 13 D4       AND R212,A
+F80F: 13 FF       AND R255,A
+F811: 0E          PUSH ST
+F812: 09          STSP
+F813: CF          RLC B
+F814: FF          TRAP 0
+F815: 0E          PUSH ST
+F816: 0F          Illegal Opcode
+F817: 09          STSP
+F818: D4 09       INV R9
+F81A: 10          Illegal Opcode
+F81B: 6C          MPY B,A
+F81C: 2C B9       MPY %>B9,A
+F81E: 4F 2D 93    DSB R45,R147
+F821: 13 EC       AND R236,A
+F823: 09          STSP
+F824: 4F AD 09    DSB R173,R9
+F827: 10          Illegal Opcode
+F828: E7 25       JL $F84F
+F82A: 4C 01 8A    MPY R1,R138
+F82D: FF          TRAP 0
+F82E: 0E          PUSH ST
+F82F: 0B          RETI
+F830: D4 FF       INV R255
+F832: 0E          PUSH ST
+F833: 0F          Illegal Opcode
+F834: 10          Illegal Opcode
+F835: 09          STSP
+F836: DA 13 72    DJNZ R19,$F8AB
+F839: B2          DEC A
+F83A: 4F A7 72    DSB R167,R114
+F83D: B2          DEC A
+F83E: 5A A7       SUB %>A7,B
+F840: 13 10       AND R16,A
+F842: F2          TRAP 13
+F843: 13 FB       AND R251,A
+F845: F2          TRAP 13
+F846: 13 F3       AND R243,A
+F848: F2          TRAP 13
+F849: FB          TRAP 4
+F84A: 69          ADC B,A
+F84B: B2          DEC A
+F84C: 47 AF E9 D4 BTJZ R175,R233,$F824
+F850: F9          TRAP 6
+F851: D4 F5       INV R245
+F853: D7 09       SWAP R9
+F855: 10          Illegal Opcode
+F856: EC          TRAP 19
+F857: 13 FE       AND R254,A
+F859: 09          STSP
+F85A: 10          Illegal Opcode
+F85B: 6C          MPY B,A
+F85C: B3          INC A
+F85D: 13 7E       AND R126,A
+F85F: AB 6C AB    STA @>6CAB(B)
+F862: 57 02 A9    BTJZ %>2,B,$F80E
+F865: FF          TRAP 0
+F866: 2C 0E       MPY %>E,A
+F868: D7 13       SWAP R19
+F86A: 10          Illegal Opcode
+F86B: 62          MOV B,A
+F86C: 2C A5       MPY %>A5,A
+F86E: 54 01       OR %>1,B
+F870: 3F BE       DSB R190,B
+F872: 62          MOV B,A
+F873: 2C A5       MPY %>A5,A
+F875: 4F 01 3F    DSB R1,R63
+F878: BE          RL A
+F879: 6E          DAC B,A
+F87A: A7 0F 54 0B BTJZP %>0F,P84,$F889
+F87E: 01          IDLE
+F87F: 8A FF DA    LDA @>FFDA
+F882: 13 FF       AND R255,A
+F884: 13 41       AND R65,A
+F886: 3F 93       DSB R147,B
+F888: 2D 21       CMP %>21,A
+F88A: 39 E5       ADC R229,B
+F88C: 7F 93 13    DSB %>93,R19
+F88F: E5 0E       JPI $F89F
+F891: 09          STSP
+F892: 41          Illegal Opcode
+F893: 3F 93       DSB R147,B
+F895: 13 65       AND R101,A
+F897: 25 AE       XOR %>AE,A
+F899: 13 7F       AND R127,A
+F89B: 0C          Illegal Opcode
+F89C: 8B 13 6F    STA @>136F
+F89F: 34 A8       OR R168,B
+F8A1: 13 41       AND R65,A
+F8A3: 3F 35       DSB R53,B
+F8A5: 9D 13       CMPA *R19
+F8A7: 75 B3 09    XOR %>B3,R9
+F8AA: 41          Illegal Opcode
+F8AB: 3F 0C       DSB R12,B
+F8AD: AB 75 29    STA @>7529(B)
+F8B0: AC 41 3F    BR @>413F(B)
+F8B3: 0C          Illegal Opcode
+F8B4: 0C          Illegal Opcode
+F8B5: AD FF 22    CMPA @>FF22(B)
+F8B8: FF          TRAP 0
+F8B9: FF          TRAP 0
+F8BA: 13 41       AND R65,A
+F8BC: 9C FF       BR *R255
+F8BE: 33 41       AND R65,B
+F8C0: 9C F4       BR *R244
+F8C2: 42 8D 13    MOV R141,R19
+F8C5: FF          TRAP 0
+F8C6: 0E          PUSH ST
+F8C7: 41          Illegal Opcode
+F8C8: 9C FF       BR *R255
+F8CA: 41          Illegal Opcode
+F8CB: BF          RLC A
+F8CC: 13 FF       AND R255,A
+F8CE: 13 77       AND R119,A
+F8D0: 37 93 13    BTJZ R147,B,$F8E6
+F8D3: E8          TRAP 23
+F8D4: 0E          PUSH ST
+F8D5: 42 AA 0E    MOV R170,R14
+F8D8: 25 E8       XOR %>E8,A
+F8DA: 42 AA E8    MOV R170,R232
+F8DD: 42 B2 33    MOV R178,R51
+F8E0: E9          TRAP 22
+F8E1: 09          STSP
+F8E2: 77 37 86 E9 BTJZ %>37,R134,$F8CF
+F8E6: 09          STSP
+F8E7: E5 E9       JPI $F8D2
+F8E9: 2F E5       DSB %>E5,A
+F8EB: E9          TRAP 22
+F8EC: 25 2E       XOR %>2E,A
+F8EE: E5 FF       JPI $F8EF
+F8F0: 0F          Illegal Opcode
+F8F1: 77 B7 23 FF BTJZ %>B7,R35,$F8F4
+F8F5: FF          TRAP 0
+F8F6: EB          TRAP 20
+F8F7: 09          STSP
+F8F8: 42 AA EB    MOV R170,R235
+F8FB: 42 A9 6F    MOV R169,R111
+F8FE: AD 0B 42    CMPA @>0B42(B)
+F901: 08          POP ST
+F902: 0F          Illegal Opcode
+F903: 90          Illegal Opcode
+F904: E3 0F       JHS $F915
+F906: 42 2A 37    MOV R42,R55
+F909: B7          SWAP A
+F90A: FF          TRAP 0
+F90B: 13 42       AND R66,A
+F90D: A9          Illegal Opcode
+F90E: FF          TRAP 0
+F90F: 33 42       AND R66,B
+F911: A9          Illegal Opcode
+F912: FF          TRAP 0
+F913: 12 42       MOV R66,A
+F915: 88 FF 42 AA MOVD %>FF42,R170
+F919: 13 FF       AND R255,A
+F91B: 13 41       AND R65,A
+F91D: 21          Illegal Opcode
+F91E: 93 FF       ANDP B,P255
+F920: 24 FF       OR %>FF,A
+F922: 09          STSP
+F923: 10          Illegal Opcode
+F924: 65          XOR B,A
+F925: A4 13 41    ORP %>13,P65
+F928: 21          Illegal Opcode
+F929: 0C          Illegal Opcode
+F92A: 01          IDLE
+F92B: 95 0A       XORP B,P10
+F92D: 25 FF       XOR %>FF,A
+F92F: 13 41       AND R65,A
+F931: 95 09       XORP B,P9
+F933: 11          Illegal Opcode
+F934: 25 FF       XOR %>FF,A
+F936: 13 42       AND R66,A
+F938: 8D 13 E5    CMPA @>13E5
+F93B: 0E          PUSH ST
+F93C: 09          STSP
+F93D: 41          Illegal Opcode
+F93E: 21          Illegal Opcode
+F93F: 8C 13 EF    BR $13EF
+F942: 13 41       AND R65,A
+F944: 21          Illegal Opcode
+F945: 9F          Illegal Opcode
+F946: 13 6F       AND R111,A
+F948: 25 B3       XOR %>B3,A
+F94A: 41          Illegal Opcode
+F94B: 21          Illegal Opcode
+F94C: 0F          Illegal Opcode
+F94D: AB 13 6F    STA @>136F(B)
+F950: 29 2E       ADC %>2E,A
+F952: A7 41 21 1F BTJZP %>41,P33,$F975
+F956: 0C          Illegal Opcode
+F957: AC 13 6F    BR @>136F(B)
+F95A: B7          SWAP A
+F95B: 41          Illegal Opcode
+F95C: 21          Illegal Opcode
+F95D: A0          Illegal Opcode
+F95E: 09          STSP
+F95F: F5          TRAP 10
+F960: 10          Illegal Opcode
+F961: 21          Illegal Opcode
+F962: 41          Illegal Opcode
+F963: 0A          RETS
+F964: 96 E7 41    BTJOP B,P231,$F9A8
+F967: 8A EA 41    LDA @>EA41
+F96A: 8A FF 13    LDA @>FF13
+F96D: 41          Illegal Opcode
+F96E: 95 FF       XORP B,P255
+F970: 33 41       AND R65,B
+F972: 95 FF       XORP B,P255
+F974: 41          Illegal Opcode
+F975: A1          Illegal Opcode
+F976: 13 FF       AND R255,A
+F978: 13 D3       AND R211,A
+F97A: 09          STSP
+F97B: 10          Illegal Opcode
+F97C: FF          TRAP 0
+F97D: 13 FF       AND R255,A
+F97F: 07          SETC
+F980: 11          Illegal Opcode
+F981: FF          TRAP 0
+F982: 13 FF       AND R255,A
+F984: 11          Illegal Opcode
+F985: FF          TRAP 0
+F986: 13 D3       AND R211,A
+F988: 09          STSP
+F989: E4 13       JP $F99E
+F98B: 41          Illegal Opcode
+F98C: 95 09       XORP B,P9
+F98E: 10          Illegal Opcode
+F98F: FF          TRAP 0
+F990: 24 13       OR %>13,A
+F992: FF          TRAP 0
+F993: F6          TRAP 9
+F994: 25 32       XOR %>32,A
+F996: 47 A3 09 11 BTJZ R163,R9,$F9AB
+F99A: EC          TRAP 19
+F99B: FE          TRAP 1
+F99C: 72 A9 09    MOV %>A9,R9
+F99F: 7C 93 09    MPY %>93,R9
+F9A2: 10          Illegal Opcode
+F9A3: F2          TRAP 13
+F9A4: 09          STSP
+F9A5: F3          TRAP 12
+F9A6: FF          TRAP 0
+F9A7: 0E          PUSH ST
+F9A8: 0B          RETI
+F9A9: D3 72       INC R114
+F9AB: A9          Illegal Opcode
+F9AC: 47 07 0E 8C BTJZ R7,R14,$F93C
+F9B0: F2          TRAP 13
+F9B1: 09          STSP
+F9B2: 47 AF F2 F3 BTJZ R175,R242,$F9A9
+F9B6: 13 76       AND R118,A
+F9B8: 25 AE       XOR %>AE,A
+F9BA: 13 53       AND R83,A
+F9BC: 23 0C       AND %>C,A
+F9BE: 8B 13 76    STA @>1376
+F9C1: 25 AE       XOR %>AE,A
+F9C3: 53 23       AND %>23,B
+F9C5: 07          SETC
+F9C6: 07          SETC
+F9C7: 8B 09 10    STA @>0910
+F9CA: F7          TRAP 8
+F9CB: 71          Illegal Opcode
+F9CC: 9F          Illegal Opcode
+F9CD: 0D          LDSP
+F9CE: F7          TRAP 8
+F9CF: DF F7       RLC R247
+F9D1: 71          Illegal Opcode
+F9D2: 9F          Illegal Opcode
+F9D3: FF          TRAP 0
+F9D4: 2F D3       DSB %>D3,A
+F9D6: 09          STSP
+F9D7: 10          Illegal Opcode
+F9D8: 0C          Illegal Opcode
+F9D9: F3          TRAP 12
+F9DA: 13 4C       AND R76,A
+F9DC: AB 09 10    STA @>0910(B)
+F9DF: FF          TRAP 0
+F9E0: 33 13       AND R19,B
+F9E2: FF          TRAP 0
+F9E3: 09          STSP
+F9E4: 10          Illegal Opcode
+F9E5: 6C          MPY B,A
+F9E6: B9          POP A
+F9E7: 13 6D       AND R109,A
+F9E9: 93 09       ANDP B,P9
+F9EB: 10          Illegal Opcode
+F9EC: 6D          CMP B,A
+F9ED: 25 2E       XOR %>2E,A
+F9EF: B4          INV A
+F9F0: 50          Illegal Opcode
+F9F1: 0C          Illegal Opcode
+F9F2: 0B          RETI
+F9F3: 02          Illegal Opcode
+F9F4: 8D 66 35    CMPA @>6635
+F9F7: AC 68 1E    BR @>681E(B)
+F9FA: AD 65 B2    CMPA @>65B2(B)
+F9FD: FC          TRAP 3
+F9FE: E5 D3       JPI $F9D3
+FA00: 61          Illegal Opcode
+FA01: 32 AE       MOV R174,B
+FA03: 74 8B 13    OR %>8B,R19
+FA06: 61          Illegal Opcode
+FA07: B2          DEC A
+FA08: 0E          PUSH ST
+FA09: F4          TRAP 11
+FA0A: 11          Illegal Opcode
+FA0B: 61          Illegal Opcode
+FA0C: B2          DEC A
+FA0D: FC          TRAP 3
+FA0E: 61          Illegal Opcode
+FA0F: A4 47 07    ORP %>47,P7
+FA12: 01          IDLE
+FA13: 95 09       XORP B,P9
+FA15: 10          Illegal Opcode
+FA16: E1 13       JN $FA2B
+FA18: 53 8F       AND %>8F,B
+FA1A: E1 33       JN $FA4F
+FA1C: 35 C7       XOR R199,B
+FA1E: E1 D3       JN $F9F3
+FA20: 69          ADC B,A
+FA21: 27 A8 D4    BTJZ %>A8,A,$F9F8
+FA24: E9          TRAP 22
+FA25: D3 13       INC R19
+FA27: 79 A5 C6    ADC %>A5,R198
+FA2A: F9          TRAP 6
+FA2B: D3 F5       INC R245
+FA2D: D6 FF       XCHB R255
+FA2F: C7          SWAP B
+FA30: 13 FF       AND R255,A
+FA32: 13 47       AND R71,A
+FA34: 07          SETC
+FA35: A8 F5 2C 68 MOVD %>F52C(B),R104
+FA39: 9E FF       CALL *R255
+FA3B: 26 FF 6F    BTJO %>FF,A,$FAAD
+FA3E: 35 B2       XOR R178,B
+FA40: 68          ADD B,A
+FA41: BA FF       DJNZ A,$FA42
+FA43: E8          TRAP 23
+FA44: 13 FF       AND R255,A
+FA46: 13 41       AND R65,A
+FA48: 0A          RETS
+FA49: 93 69       ANDP B,P105
+FA4B: B6          XCHB A
+FA4C: 41          Illegal Opcode
+FA4D: 24 0C       OR %>C,A
+FA4F: A3 13 FF    ANDP %>13,P255
+FA52: 29 0E       ADC %>E,A
+FA54: 41          Illegal Opcode
+FA55: A4 E5 34    ORP %>E5,P52
+FA58: 41          Illegal Opcode
+FA59: 24 87       OR %>87,A
+FA5B: 33 35       AND R53,B
+FA5D: 67 25       BTJZ B,A,$FA85
+FA5F: B3          INC A
+FA60: 41          Illegal Opcode
+FA61: 3D 01       CMP R1,B
+FA63: 0A          RETS
+FA64: 07          SETC
+FA65: 07          SETC
+FA66: B7          SWAP A
+FA67: E7 41       JL $FAAA
+FA69: A4 72 25    ORP %>72,P37
+FA6C: 21          Illegal Opcode
+FA6D: B4          INV A
+FA6E: 41          Illegal Opcode
+FA6F: 22 27       MOV %>27,A
+FA71: 14 8D       OR R141,A
+FA73: FF          TRAP 0
+FA74: 13 41       AND R65,A
+FA76: A2 13 22    MOVP %>13,P34
+FA79: 09          STSP
+FA7A: FF          TRAP 0
+FA7B: 41          Illegal Opcode
+FA7C: BD          RRC A
+FA7D: FF          TRAP 0
+FA7E: 0F          Illegal Opcode
+FA7F: 41          Illegal Opcode
+FA80: 8A 09 E8    LDA @>09E8
+FA83: E8          TRAP 23
+FA84: E8          TRAP 23
+FA85: 41          Illegal Opcode
+FA86: BD          RRC A
+FA87: FF          TRAP 0
+FA88: 41          Illegal Opcode
+FA89: BD          RRC A
+FA8A: 13 FF       AND R255,A
+FA8C: 13 54       AND R84,A
+FA8E: 02          Illegal Opcode
+FA8F: B2          DEC A
+FA90: 13 61       AND R97,A
+FA92: B6          XCHB A
+FA93: 5B 1A       SBB %>1A,B
+FA95: A3 13 65    ANDP %>13,P101
+FA98: 32 A5       MOV R165,B
+FA9A: 5B BC       SBB %>BC,B
+FA9C: 13 6F       AND R111,A
+FA9E: 35 B2       XOR R178,B
+FAA0: 60          Illegal Opcode
+FAA1: B3          INC A
+FAA2: 6F          DSB B,A
+FAA3: B7          SWAP A
+FAA4: 5B A0       SBB %>A0,B
+FAA6: 79 B0 5B    ADC %>B0,R91
+FAA9: 0C          Illegal Opcode
+FAAA: 02          Illegal Opcode
+FAAB: 89          Illegal Opcode
+FAAC: FF          TRAP 0
+FAAD: 12 F9       MOV R249,A
+FAAF: FF          TRAP 0
+FAB0: 09          STSP
+FAB1: DB FF       DECD R255
+FAB3: FF          TRAP 0
+FAB4: 13 EE       AND R238,A
+FAB6: 4C 8B 2E    MPY R139,R46
+FAB9: FF          TRAP 0
+FABA: 2E 25       DAC %>25,A
+FABC: C6          XCHB B
+FABD: FF          TRAP 0
+FABE: 13 C6       AND R198,A
+FAC0: EE          TRAP 17
+FAC1: 24 46       OR %>46,A
+FAC3: 8B 13 10    STA @>1310
+FAC6: FF          TRAP 0
+FAC7: 0B          RETI
+FAC8: C6          XCHB B
+FAC9: 13 10       AND R16,A
+FACB: 65          XOR B,A
+FACC: A4 13 46    ORP %>13,P70
+FACF: 01          IDLE
+FAD0: 95 09       XORP B,P9
+FAD2: 11          Illegal Opcode
+FAD3: 65          XOR B,A
+FAD4: A4 13 53    ORP %>13,P83
+FAD7: 01          IDLE
+FAD8: 95 26       XORP B,P38
+FADA: 32 E5       MOV R229,B
+FADC: 2E 24       DAC %>24,A
+FADE: C7          SWAP B
+FADF: 65          XOR B,A
+FAE0: AE 53 0C    CALL @>530C(B)
+FAE3: 8B E5 34    STA @>E534
+FAE6: 46 8C 65 B2 BTJO R140,R101,$FA9C
+FAEA: 53 B3       AND %>B3,B
+FAEC: FF          TRAP 0
+FAED: 0B          RETI
+FAEE: D3 E5       INC R229
+FAF0: D3 EE       INC R238
+FAF2: 0B          RETI
+FAF3: 53 8B       AND %>8B,B
+FAF5: F2          TRAP 13
+FAF6: 09          STSP
+FAF7: 46 B3 FF 0E BTJO R179,R255,$FB09
+FAFB: 0B          RETI
+FAFC: C6          XCHB B
+FAFD: FF          TRAP 0
+FAFE: 0E          PUSH ST
+FAFF: 0F          Illegal Opcode
+FB00: 10          Illegal Opcode
+FB01: 09          STSP
+FB02: CC          RR B
+FB03: FA          TRAP 5
+FB04: 0B          RETI
+FB05: 46 AB F3 0B BTJO R171,R243,$FB14
+FB09: 46 AB FF 1F BTJO R171,R255,$FB2C
+FB0D: 0B          RETI
+FB0E: C6          XCHB B
+FB0F: 0F          Illegal Opcode
+FB10: 0E          PUSH ST
+FB11: FF          TRAP 0
+FB12: 0E          PUSH ST
+FB13: 0F          Illegal Opcode
+FB14: CC          RR B
+FB15: FF          TRAP 0
+FB16: 34 0B       OR R11,B
+FB18: C6          XCHB B
+FB19: 09          STSP
+FB1A: 11          Illegal Opcode
+FB1B: FF          TRAP 0
+FB1C: 0E          PUSH ST
+FB1D: 0F          Illegal Opcode
+FB1E: CC          RR B
+FB1F: F2          TRAP 13
+FB20: F4          TRAP 11
+FB21: 11          Illegal Opcode
+FB22: FF          TRAP 0
+FB23: 2F 2E       DSB %>2E,A
+FB25: F1          TRAP 14
+FB26: 67 A8       BTJZ B,A,$FAD1
+FB28: C6          XCHB B
+FB29: 6C          MPY B,A
+FB2A: A4 46 3E    ORP %>46,P62
+FB2D: 01          IDLE
+FB2E: 95 67       XORP B,P103
+FB30: AE 46 8B    CALL @>468B(B)
+FB33: 67 AE       BTJZ B,A,$FAE4
+FB35: 0E          PUSH ST
+FB36: 46 8B 67 AE BTJO R139,R103,$FAE8
+FB3A: 0B          RETI
+FB3B: 46 8B 71 35 BTJO R139,R113,$FB74
+FB3F: A5 53 02    XORP %>53,P2
+FB42: A9          Illegal Opcode
+FB43: FF          TRAP 0
+FB44: 21          Illegal Opcode
+FB45: C6          XCHB B
+FB46: 2D FF       CMP %>FF,A
+FB48: 23 C6       AND %>C6,A
+FB4A: FF          TRAP 0
+FB4B: CC          RR B
+FB4C: 13 FF       AND R255,A
+FB4E: 13 41       AND R65,A
+FB50: 0A          RETS
+FB51: 94 FF       ORP B,P255
+FB53: 41          Illegal Opcode
+FB54: 8A 13 FF    LDA @>13FF
+FB57: 13 42       AND R66,A
+FB59: 2A 94       SUB %>94,A
+FB5B: 13 FF       AND R255,A
+FB5D: 2E FF       DAC %>FF,A
+FB5F: FF          TRAP 0
+FB60: 13 42       AND R66,A
+FB62: A9          Illegal Opcode
+FB63: FF          TRAP 0
+FB64: 42 AA 13    MOV R170,R19
+FB67: FF          TRAP 0
+FB68: 13 47       AND R71,A
+FB6A: 07          SETC
+FB6B: AD EF 23    CMPA @>EF23(B)
+FB6E: 09          STSP
+FB6F: 6D          CMP B,A
+FB70: B5          CLR A
+FB71: FF          TRAP 0
+FB72: 2C FF       MPY %>FF,A
+FB74: FF          TRAP 0
+FB75: 0B          RETI
+FB76: FE          TRAP 1
+FB77: 65          XOR B,A
+FB78: 21          Illegal Opcode
+FB79: A4 6D 13    ORP %>6D,P19
+FB7C: 01          IDLE
+FB7D: 95 61       XORP B,P97
+FB7F: 35 27       XOR R39,B
+FB81: A8 6D 1A A8 MOVD %>6D1A(B),R168
+FB85: FF          TRAP 0
+FB86: ED          TRAP 18
+FB87: E2 D0       JEQ $FB59
+FB89: 13 FF       AND R255,A
+FB8B: 13 47       AND R71,A
+FB8D: 07          SETC
+FB8E: 90          Illegal Opcode
+FB8F: 6F          DSB B,A
+FB90: B6          XCHB A
+FB91: 50          Illegal Opcode
+FB92: 1F A3       DSB R163,A
+FB94: FF          TRAP 0
+FB95: 2D FF       CMP %>FF,A
+FB97: FF          TRAP 0
+FB98: D0 13       MOV A,R19
+FB9A: FF          TRAP 0
+FB9B: 13 47       AND R71,A
+FB9D: 07          SETC
+FB9E: 8B 25 E7    STA @>25E7
+FBA1: 0F          Illegal Opcode
+FBA2: 4B 01 8A    SBB R1,R138
+FBA5: E7 32       JL $FBD9
+FBA7: 6C          MPY B,A
+FBA8: 01          IDLE
+FBA9: A4 E7 09    ORP %>E7,P9
+FBAC: 6C          MPY B,A
+FBAD: 01          IDLE
+FBAE: A4 67 AC    ORP %>67,P172
+FBB1: 0B          RETI
+FBB2: 6C          MPY B,A
+FBB3: 01          IDLE
+FBB4: 24 BE       OR %>BE,A
+FBB6: E7 EC       JL $FBA4
+FBB8: EB          TRAP 20
+FBB9: 13 6C       AND R108,A
+FBBB: 02          Illegal Opcode
+FBBC: A9          Illegal Opcode
+FBBD: EB          TRAP 20
+FBBE: 33 6C       AND R108,B
+FBC0: 02          Illegal Opcode
+FBC1: A9          Illegal Opcode
+FBC2: EB          TRAP 20
+FBC3: 6C          MPY B,A
+FBC4: 02          Illegal Opcode
+FBC5: AA 13 6F    LDA @>136F(B)
+FBC8: B7          SWAP A
+FBC9: 13 78       AND R120,A
+FBCB: A0          Illegal Opcode
+FBCC: FF          TRAP 0
+FBCD: 2E FF       DAC %>FF,A
+FBCF: 09          STSP
+FBD0: 10          Illegal Opcode
+FBD1: F5          TRAP 10
+FBD2: 4B 31 96    SBB R49,R150
+FBD5: 13 FF       AND R255,A
+FBD7: F8          TRAP 7
+FBD8: 47 B4 4B 02 BTJZ R180,R75,$FBDE
+FBDC: 8D FF CB    CMPA @>FFCB
+FBDF: 13 FF       AND R255,A
+FBE1: 13 F5       AND R245,A
+FBE3: E6 13       JNZ $FBF8
+FBE5: 4F A3 72    DSB R163,R114
+FBE8: 2F 35       DSB %>35,A
+FBEA: 27 A8 4F    BTJZ %>A8,A,$FC3C
+FBED: 0F          Illegal Opcode
+FBEE: 27 B5 09    BTJZ %>B5,A,$FBFA
+FBF1: 10          Illegal Opcode
+FBF2: F2          TRAP 13
+FBF3: 13 F3       AND R243,A
+FBF5: 09          STSP
+FBF6: 10          Illegal Opcode
+FBF7: 72 B3 13    MOV %>B3,R19
+FBFA: 73 AB F2    AND %>AB,R242
+FBFD: FA          TRAP 5
+FBFE: 13 6E       AND R110,A
+FC00: A5 6E 0F    XORP %>6E,P15
+FC03: 8B 0F 6E    STA @>0F6E
+FC06: A5 6E 0F    XORP %>6E,P15
+FC09: 8B 11 F7    STA @>11F7
+FC0C: 2E E0       DAC %>E0,A
+FC0E: F7          TRAP 8
+FC0F: F5          TRAP 10
+FC10: 13 76       AND R118,A
+FC12: 25 B2       XOR %>B2,A
+FC14: 75 23 B3    XOR %>23,R179
+FC17: F6          TRAP 9
+FC18: 4F A3 FF    DSB R163,R255
+FC1B: 0E          PUSH ST
+FC1C: 0B          RETI
+FC1D: F5          TRAP 10
+FC1E: FF          TRAP 0
+FC1F: 0E          PUSH ST
+FC20: 25 2E       XOR %>2E,A
+FC22: F5          TRAP 10
+FC23: FF          TRAP 0
+FC24: 0E          PUSH ST
+FC25: 29 09       ADC %>9,A
+FC27: F5          TRAP 10
+FC28: EC          TRAP 19
+FC29: 24 75       OR %>75,A
+FC2B: AD 75 27    CMPA @>7527(B)
+FC2E: 28 B4       ADD %>B4,A
+FC30: 57 17 02    BTJZ %>17,B,$FC35
+FC33: 8D 75 27    CMPA @>7527
+FC36: A8 4F 0F A8 MOVD %>4F0F(B),R168
+FC3A: 0C          Illegal Opcode
+FC3B: 75 B2 FA    XOR %>B2,R250
+FC3E: 10          Illegal Opcode
+FC3F: 75 B2 60    XOR %>B2,R96
+FC42: B3          INC A
+FC43: 13 F5       AND R245,A
+FC45: E0 10       JMP $FC57
+FC47: F5          TRAP 10
+FC48: 33 09       AND R9,B
+FC4A: E0 75       JMP $FCC1
+FC4C: B3          INC A
+FC4D: 4F B7 75    DSB R183,R117
+FC50: 2C A4       MPY %>A4,A
+FC52: 5E 01       DAC %>1,B
+FC54: 95 0E       XORP B,P14
+FC56: F5          TRAP 10
+FC57: 0E          PUSH ST
+FC58: 2C CF       MPY %>CF,A
+FC5A: 75 B0 5F    XOR %>B0,R95
+FC5D: 02          Illegal Opcode
+FC5E: 89          Illegal Opcode
+FC5F: F5          TRAP 10
+FC60: E0 F9       JMP $FC5B
+FC62: C5          CLR B
+FC63: 69          ADC B,A
+FC64: 2E A7       DAC %>A7,A
+FC66: 75 0C AC    XOR %>C,R172
+FC69: E9          TRAP 22
+FC6A: C5          CLR B
+FC6B: 6F          DSB B,A
+FC6C: B2          DEC A
+FC6D: FA          TRAP 5
+FC6E: 6F          DSB B,A
+FC6F: AB 13 5E    STA @>135E(B)
+FC72: 02          Illegal Opcode
+FC73: A9          Illegal Opcode
+FC74: 6F          DSB B,A
+FC75: AB 33 5E    STA @>335E(B)
+FC78: 02          Illegal Opcode
+FC79: A9          Illegal Opcode
+FC7A: 6F          DSB B,A
+FC7B: AB 5E 02    STA @>5E02(B)
+FC7E: AA 6F A4    LDA @>6FA4(B)
+FC81: 13 5E       AND R94,A
+FC83: 01          IDLE
+FC84: 95 EF       XORP B,P239
+FC86: 24 DE       OR %>DE,A
+FC88: EF          TRAP 16
+FC89: DF FF       RLC R255
+FC8B: 25 F5       XOR %>F5,A
+FC8D: FF          TRAP 0
+FC8E: 13 F5       AND R245,A
+FC90: 61          Illegal Opcode
+FC91: B2          DEC A
+FC92: FA          TRAP 5
+FC93: E1 F5       JN $FC8A
+FC95: 13 6E       AND R110,A
+FC97: 2C B9       MPY %>B9,A
+FC99: 75 0B 2D    XOR %>B,R45
+FC9C: 93 13       ANDP B,P19
+FC9E: 6E          DAC B,A
+FC9F: 23 A5       AND %>A5,A
+FCA1: 6E          DAC B,A
+FCA2: 0F          Illegal Opcode
+FCA3: 0B          RETI
+FCA4: B7          SWAP A
+FCA5: 6E          DAC B,A
+FCA6: 07          SETC
+FCA7: B4          INV A
+FCA8: 75 0B 02    XOR %>B,R2
+FCAB: 8D 23 FF    CMPA @>23FF
+FCAE: 2E CF       DAC %>CF,A
+FCB0: FF          TRAP 0
+FCB1: 2E 27       DAC %>27,A
+FCB3: D7 13       SWAP R19
+FCB5: 11          Illegal Opcode
+FCB6: FF          TRAP 0
+FCB7: 2E CF       DAC %>CF,A
+FCB9: 29 EE       ADC %>EE,A
+FCBB: 4F 8B 09    DSB R139,R9
+FCBE: 10          Illegal Opcode
+FCBF: EE          TRAP 17
+FCC0: 13 4F       AND R79,A
+FCC2: 8B FF 33    STA @>FF33
+FCC5: 34 13       OR R19,B
+FCC7: F5          TRAP 10
+FCC8: E6 0E       JNZ $FCD8
+FCCA: 57 A8 74    BTJZ %>A8,B,$FD41
+FCCD: 28 25       ADD %>25,A
+FCCF: B2          DEC A
+FCD0: 4F 36 B3    DSB R54,R179
+FCD3: 73 B3 13    AND %>B3,R19
+FCD6: 57 17 37    BTJZ %>17,B,$FD10
+FCD9: B7          SWAP A
+FCDA: 09          STSP
+FCDB: 11          Illegal Opcode
+FCDC: ED          TRAP 18
+FCDD: 4F 90 FF    DSB R144,R255
+FCE0: D8 73       PUSH R115
+FCE2: 39 23       ADC R35,B
+FCE4: A8 77 37 06 MOVD %>7737(B),R6
+FCE8: 01          IDLE
+FCE9: AA 13 FF    LDA @>13FF(B)
+FCEC: 13 42       AND R66,A
+FCEE: 09          STSP
+FCEF: 93 E8       ANDP B,P232
+FCF1: E8          TRAP 23
+FCF2: 65          XOR B,A
+FCF3: 2F B0       DSB %>B0,A
+FCF5: 42 09 13    MOV R9,R19
+FCF8: 02          Illegal Opcode
+FCF9: 89          Illegal Opcode
+FCFA: 6F          DSB B,A
+FCFB: B7          SWAP A
+FCFC: 42 09 A0    MOV R9,R160
+FCFF: 75 B4 13    XOR %>B4,R19
+FD02: 42 09 1E    MOV R9,R30
+FD05: 02          Illegal Opcode
+FD06: 8D FF 30    CMPA @>FF30
+FD09: FF          TRAP 0
+FD0A: FF          TRAP 0
+FD0B: 42 89 13    MOV R137,R19
+FD0E: FF          TRAP 0
+FD0F: 13 42       AND R66,A
+FD11: 2A 31       SUB %>31,A
+FD13: 9F          Illegal Opcode
+FD14: 75 21 B2    XOR %>21,R178
+FD17: 42 08 30    MOV R8,R48
+FD1A: 98 75 A5    MOVD R117,R165
+FD1D: 13 42       AND R66,A
+FD1F: 2A 31       SUB %>31,A
+FD21: 9F          Illegal Opcode
+FD22: F5          TRAP 10
+FD23: 42 08 B0    MOV R8,R176
+FD26: FF          TRAP 0
+FD27: 42 88 13    MOV R136,R19
+FD2A: FF          TRAP 0
+FD2B: 13 FB       AND R251,A
+FD2D: 13 E5       AND R229,A
+FD2F: 0E          PUSH ST
+FD30: 09          STSP
+FD31: 4E 93 E8    DAC R147,R232
+FD34: CE          RL B
+FD35: FF          TRAP 0
+FD36: 32 FF       MOV R255,B
+FD38: 11          Illegal Opcode
+FD39: FF          TRAP 0
+FD3A: E7 FF       JL $FD3B
+FD3C: CE          RL B
+FD3D: 13 FF       AND R255,A
+FD3F: 13 47       AND R71,A
+FD41: 07          SETC
+FD42: 37 B7 E8    BTJZ R183,B,$FD2D
+FD45: E5 09       JPI $FD50
+FD47: 69          ADC B,A
+FD48: 2F AE       DSB %>AE,A
+FD4A: 66 0F       BTJO B,A,$FD5C
+FD4C: 8B 6F 2D    STA @>6F2D
+FD4F: A5 77 0F    XORP %>77,P15
+FD52: 90          Illegal Opcode
+FD53: 09          STSP
+FD54: 75 B2 09    XOR %>B2,R9
+FD57: 66 B3       BTJO B,A,$FD0D
+FD59: 75 B2 09    XOR %>B2,R9
+FD5C: 65          XOR B,A
+FD5D: B3          INC A
+FD5E: 09          STSP
+FD5F: F5          TRAP 10
+FD60: 09          STSP
+FD61: 66 96       BTJO B,A,$FCFA
+FD63: 09          STSP
+FD64: 73 B5 09    AND %>B5,R9
+FD67: 65          XOR B,A
+FD68: 96 09 65    BTJOP B,P9,$FDD0
+FD6B: A4 13 6B    ORP %>13,P107
+FD6E: 01          IDLE
+FD6F: 95 09       XORP B,P9
+FD71: FF          TRAP 0
+FD72: 09          STSP
+FD73: EB          TRAP 20
+FD74: 61          Illegal Opcode
+FD75: 29 A4       ADC %>A4,A
+FD77: 77 37 07 07 BTJZ %>37,R7,$FD82
+FD7B: 01          IDLE
+FD7C: 95 0E       XORP B,P14
+FD7E: 69          ADC B,A
+FD7F: 2F AE       DSB %>AE,A
+FD81: 65          XOR B,A
+FD82: 0F          Illegal Opcode
+FD83: 8B FF 33    STA @>FF33
+FD86: FF          TRAP 0
+FD87: 0A          RETS
+FD88: FF          TRAP 0
+FD89: 13 EB       AND R235,A
+FD8B: 09          STSP
+FD8C: 10          Illegal Opcode
+FD8D: 0A          RETS
+FD8E: 25 FF       XOR %>FF,A
+FD90: 13 EB       AND R235,A
+FD92: 09          STSP
+FD93: 11          Illegal Opcode
+FD94: 14 FF       OR R255,A
+FD96: 13 EB       AND R235,A
+FD98: 09          STSP
+FD99: 11          Illegal Opcode
+FD9A: 09          STSP
+FD9B: FF          TRAP 0
+FD9C: 13 F7       AND R247,A
+FD9E: 35 FF       XOR R255,B
+FDA0: 13 F7       AND R247,A
+FDA2: 13 10       AND R16,A
+FDA4: 09          STSP
+FDA5: FF          TRAP 0
+FDA6: 13 EB       AND R235,A
+FDA8: 13 63       AND R99,A
+FDAA: A8 77 37 02 MOVD %>7737(B),R2
+FDAE: A9          Illegal Opcode
+FDAF: FF          TRAP 0
+FDB0: 23 0F       AND %>F,A
+FDB2: FF          TRAP 0
+FDB3: 09          STSP
+FDB4: ED          TRAP 18
+FDB5: 6B          SBB B,A
+FDB6: 90          Illegal Opcode
+FDB7: 09          STSP
+FDB8: FF          TRAP 0
+FDB9: 2E 07       DAC %>7,A
+FDBB: EB          TRAP 20
+FDBC: FF          TRAP 0
+FDBD: 13 F7       AND R247,A
+FDBF: FF          TRAP 0
+FDC0: 77 B7 FF 07 BTJZ %>B7,R255,$FDCB
+FDC4: 33 42       AND R66,B
+FDC6: 91 63       MOVP P99,B
+FDC8: A8 42 B2 13 MOVD %>42B2(B),R19
+FDCC: FF          TRAP 0
+FDCD: 13 42       AND R66,A
+FDCF: 0D          LDSP
+FDD0: 93 13       ANDP B,P19
+FDD2: 68          ADD B,A
+FDD3: A5 13 09    XORP %>13,P9
+FDD6: 52 93       MOV %>93,B
+FDD8: 13 68       AND R104,A
+FDDA: A5 13 52    XORP %>13,P82
+FDDD: 8F          Illegal Opcode
+FDDE: EF          TRAP 16
+FDDF: 13 42       AND R66,A
+FDE1: 0D          LDSP
+FDE2: 9F          Illegal Opcode
+FDE3: 6F          DSB B,A
+FDE4: 24 21       OR %>21,A
+FDE6: B9          POP A
+FDE7: 42 0D 1F    MOV R13,R31
+FDEA: 21          Illegal Opcode
+FDEB: 94 68       ORP B,P104
+FDED: A1          Illegal Opcode
+FDEE: 0E          PUSH ST
+FDEF: 13 52       AND R82,A
+FDF1: 9A 13       LDA *R19
+FDF3: 68          ADD B,A
+FDF4: 29 B3       ADC %>B3,A
+FDF6: 13 52       AND R82,A
+FDF8: 0C          Illegal Opcode
+FDF9: 37 B7 13    BTJZ R183,B,$FE0F
+FDFC: 68          ADD B,A
+FDFD: 25 B9       XOR %>B9,A
+FDFF: 52 94       MOV %>94,B
+FE01: 13 68       AND R104,A
+FE03: 25 32       XOR %>32,A
+FE05: A5 52 AF    XORP %>52,P175
+FE08: 13 68       AND R104,A
+FE0A: 25 B2       XOR %>B2,A
+FE0C: 5D B3       CMP %>B3,B
+FE0E: 68          ADD B,A
+FE0F: 25 B2       XOR %>B2,A
+FE11: 76 B3 68 25 BTJO %>B3,R104,$FE3A
+FE15: 29 B2       ADC %>B2,A
+FE17: 52 AF       MOV %>AF,B
+FE19: 13 68       AND R104,A
+FE1B: 25 AD       XOR %>AD,A
+FE1D: 10          Illegal Opcode
+FE1E: 52 07       MOV %>7,B
+FE20: 90          Illegal Opcode
+FE21: 68          ADD B,A
+FE22: 25 33       XOR %>33,A
+FE24: A5 13 52    XORP %>13,P82
+FE27: 13 AB       AND R171,A
+FE29: 13 68       AND R104,A
+FE2B: 25 AE       XOR %>AE,A
+FE2D: 52 07       MOV %>7,B
+FE2F: 8B 68 32    STA @>6832
+FE32: 2F 35       DSB %>35,A
+FE34: 27 A8 13    BTJZ %>A8,A,$FE4A
+FE37: 5D 27       CMP %>27,B
+FE39: 9F          Illegal Opcode
+FE3A: 68          ADD B,A
+FE3B: 2F 33       DSB %>33,A
+FE3D: A5 52 35    XORP %>52,P53
+FE40: B7          SWAP A
+FE41: 68          ADD B,A
+FE42: 2F 35       DSB %>35,A
+FE44: 27 A8 13    BTJZ %>A8,A,$FE5A
+FE47: 52 B5       MOV %>B5,B
+FE49: 13 68       AND R104,A
+FE4B: 35 B3       XOR R179,B
+FE4D: 52 0F       MOV %>F,B
+FE4F: 37 B7 68    BTJZ R183,B,$FEBA
+FE52: A5 13 D2    XORP %>13,P210
+FE55: E8          TRAP 23
+FE56: DD 09       RRC R9
+FE58: 10          Illegal Opcode
+FE59: 65          XOR B,A
+FE5A: A4 13 42    ORP %>13,P66
+FE5D: 0D          LDSP
+FE5E: 0C          Illegal Opcode
+FE5F: 01          IDLE
+FE60: 95 33       XORP B,P51
+FE62: E9          TRAP 22
+FE63: 09          STSP
+FE64: 2E 42       DAC %>42,A
+FE66: B2          DEC A
+FE67: E9          TRAP 22
+FE68: 2F E5       DSB %>E5,A
+FE6A: E9          TRAP 22
+FE6B: 21          Illegal Opcode
+FE6C: E5 69       JPI $FED7
+FE6E: 25 AE       XOR %>AE,A
+FE70: 65          XOR B,A
+FE71: 0F          Illegal Opcode
+FE72: 8B 75 B2    STA @>75B2
+FE75: 09          STSP
+FE76: 42 32 B3    MOV R50,R179
+FE79: F5          TRAP 10
+FE7A: 21          Illegal Opcode
+FE7B: 42 32 96    MOV R50,R150
+FE7E: 13 77       AND R119,A
+FE80: AF          Illegal Opcode
+FE81: 42 0D 9F    MOV R13,R159
+FE84: FF          TRAP 0
+FE85: 34 FF       OR R255,B
+FE87: FF          TRAP 0
+FE88: 33 42       AND R66,B
+FE8A: 91 FF       MOVP P255,B
+FE8C: 42 8D 13    MOV R141,R19
+FE8F: FF          TRAP 0
+FE90: 13 71       AND R113,A
+FE92: 9F          Illegal Opcode
+FE93: EE          TRAP 17
+FE94: 29 59       ADC %>59,A
+FE96: 16 8B 13    BTJO R139,A,$FEAC
+FE99: EE          TRAP 17
+FE9A: 4F 8B 13    DSB R139,R19
+FE9D: 70          Illegal Opcode
+FE9E: 2F AE       DSB %>AE,A
+FEA0: 4F 02 09    DSB R2,R9
+FEA3: 18 8B       ADD R139,A
+FEA5: 0D          LDSP
+FEA6: F2          TRAP 13
+FEA7: 09          STSP
+FEA8: 56 B3 F2    BTJO %>B3,B,$FE9D
+FEAB: 09          STSP
+FEAC: 71          Illegal Opcode
+FEAD: 16 B3 F2    BTJO R179,A,$FEA2
+FEB0: 11          Illegal Opcode
+FEB1: F3          TRAP 12
+FEB2: FF          TRAP 0
+FEB3: 0E          PUSH ST
+FEB4: 13 CF       AND R207,A
+FEB6: FF          TRAP 0
+FEB7: 0E          PUSH ST
+FEB8: 0E          PUSH ST
+FEB9: CF          RLC B
+FEBA: F9          TRAP 6
+FEBB: C6          XCHB B
+FEBC: 13 27       AND R39,A
+FEBE: FF          TRAP 0
+FEBF: 09          STSP
+FEC0: FF          TRAP 0
+FEC1: 27 FF 0B    BTJZ %>FF,A,$FECF
+FEC4: FF          TRAP 0
+FEC5: 27 FF 09    BTJZ %>FF,A,$FED1
+FEC8: EE          TRAP 17
+FEC9: 0D          LDSP
+FECA: FF          TRAP 0
+FECB: DF FF       RLC R255
+FECD: 71          Illegal Opcode
+FECE: 96 13 FF    BTJOP B,P19,$FED0
+FED1: 13 63       AND R99,A
+FED3: 93 69       ANDP B,P105
+FED5: 25 B7       XOR %>B7,A
+FED7: 63          AND B,A
+FED8: 31          Illegal Opcode
+FED9: 9F          Illegal Opcode
+FEDA: FF          TRAP 0
+FEDB: E3 13       JHS $FEF0
+FEDD: FF          TRAP 0
+FEDE: 13 41       AND R65,A
+FEE0: 21          Illegal Opcode
+FEE1: 0F          Illegal Opcode
+FEE2: 01          IDLE
+FEE3: 3F 3E       DSB R62,B
+FEE5: 31          Illegal Opcode
+FEE6: 96 13 65    BTJOP B,P19,$FF4E
+FEE9: 32 A5       MOV R165,B
+FEEB: 6E          DAC B,A
+FEEC: B4          INV A
+FEED: 13 61       AND R97,A
+FEEF: B3          INC A
+FEF0: 13 6E       AND R110,A
+FEF2: 0F          Illegal Opcode
+FEF3: AB E1 33    STA @>E133(B)
+FEF6: 6E          DAC B,A
+FEF7: 98 E1 34    MOVD R225,R52
+FEFA: 6E          DAC B,A
+FEFB: 17 97 61    BTJZ R151,A,$FF5F
+FEFE: AE 6E 18    CALL @>6E18(B)
+FF01: 8B 68 25    STA @>6825
+FF04: 32 A5       MOV R165,B
+FF06: 70          Illegal Opcode
+FF07: AF          Illegal Opcode
+FF08: 68          ADD B,A
+FF09: 21          Illegal Opcode
+FF0A: B4          INV A
+FF0B: 70          Illegal Opcode
+FF0C: 18 02       ADD R2,A
+FF0E: 8D 68 2F    CMPA @>682F
+FF11: AC 79 35    BR @>7935(B)
+FF14: AD 68 AF    CMPA @>68AF(B)
+FF17: 79 9F EF    ADC %>9F,R239
+FF1A: 2D 6E       CMP %>6E,A
+FF1C: 8F          Illegal Opcode
+FF1D: E8          TRAP 23
+FF1E: F0          TRAP 15
+FF1F: 61          Illegal Opcode
+FF20: B2          DEC A
+FF21: 6E          DAC B,A
+FF22: BA 6F       DJNZ A,$FF93
+FF24: B2          DEC A
+FF25: 0E          PUSH ST
+FF26: 6E          DAC B,A
+FF27: B3          INC A
+FF28: F2          TRAP 13
+FF29: CE          RL B
+FF2A: FF          TRAP 0
+FF2B: EE          TRAP 17
+FF2C: 13 FF       AND R255,A
+FF2E: 13 47       AND R71,A
+FF30: 02          Illegal Opcode
+FF31: 29 B7       ADC %>B7,A
+FF33: 13 FF       AND R255,A
+FF35: EB          TRAP 20
+FF36: FF          TRAP 0
+FF37: 42 29 B7    MOV R41,R183
+FF3A: 6F          DSB B,A
+FF3B: 35 B2       XOR R178,B
+FF3D: 59 BA       ADC %>BA,B
+FF3F: 13 FF       AND R255,A
+FF41: 13 6E       AND R110,A
+FF43: 86 6F 35    BTJOP A,P111,$FF7B
+FF46: 2E A7       DAC %>A7,A
+FF48: 59 0F       ADC %>F,B
+FF4A: AC 13 6F    BR @>136F(B)
+FF4D: B5          CLR A
+FF4E: 59 9F       ADC %>9F,B
+FF50: 65          XOR B,A
+FF51: 21          Illegal Opcode
+FF52: B2          DEC A
+FF53: 10          Illegal Opcode
+FF54: 59 BC       ADC %>BC,B
+FF56: 13 65       AND R101,A
+FF58: B3          INC A
+FF59: 59 07       ADC %>7,B
+FF5B: 37 B7 13    BTJZ R183,B,$FF71
+FF5E: FF          TRAP 0
+FF5F: D9 09       POP R9
+FF61: 11          Illegal Opcode
+FF62: FF          TRAP 0
+FF63: 13 D3       AND R211,A
+FF65: 09          STSP
+FF66: 11          Illegal Opcode
+FF67: FF          TRAP 0
+FF68: 29 D3       ADC %>D3,A
+FF6A: 13 10       AND R16,A
+FF6C: FF          TRAP 0
+FF6D: 13 C6       AND R198,A
+FF6F: 13 10       AND R16,A
+FF71: FF          TRAP 0
+FF72: 09          STSP
+FF73: C6          XCHB B
+FF74: 13 10       AND R16,A
+FF76: FF          TRAP 0
+FF77: 0E          PUSH ST
+FF78: 0F          Illegal Opcode
+FF79: 10          Illegal Opcode
+FF7A: 09          STSP
+FF7B: CC          RR B
+FF7C: 13 10       AND R16,A
+FF7E: FF          TRAP 0
+FF7F: 0E          PUSH ST
+FF80: 09          STSP
+FF81: C6          XCHB B
+FF82: FF          TRAP 0
+FF83: CC          RR B
+FF84: 13 FF       AND R255,A
+FF86: 13 6B       AND R107,A
+FF88: 93 FF       ANDP B,P255
+FF8A: 3A FF       SUB R255,B
+FF8C: FF          TRAP 0
+FF8D: EB          TRAP 20
+FF8E: D0 6B       MOV A,R107
+FF90: 3C B5       MPY R181,B
+FF92: D1 6E       MOV B,R110
+FF94: 0F          Illegal Opcode
+FF95: 0F          Illegal Opcode
+FF96: 8B D2 42    STA @>D242
+FF99: 0D          LDSP
+FF9A: 9F          Illegal Opcode
+FF9B: D3 5D       INC R93
+FF9D: 0E          PUSH ST
+FF9E: 93 D4       ANDP B,P212
+FFA0: 68          ADD B,A
+FFA1: BA D5       DJNZ A,$FF78
+FFA3: 68          ADD B,A
+FFA4: 06          DINT
+FFA5: A3 D6 77    ANDP %>D6,P119
+FFA8: 37 0C 02    BTJZ R12,B,$FFAD
+FFAB: 29 B7       ADC %>B7,A
+FFAD: D7 77       SWAP R119
+FFAF: 37 07 23    BTJZ R7,B,$FFD5
+FFB2: 0C          Illegal Opcode
+FFB3: 8B D8 54    STA @>D854
+FFB6: 02          Illegal Opcode
+FFB7: 8D D9 78    CMPA @>D978
+FFBA: 06          DINT
+FFBB: 8B F7 8C    STA @>F78C
+FFBE: F7          TRAP 8
+FFBF: CC          RR B
+FFC0: F8          TRAP 7
+FFC1: 82 F8       MOVP A,P248
+FFC3: CC          RR B
+FFC4: F9          TRAP 6
+FFC5: 19 F9       ADC R249,A
+FFC7: 76 FA 30 FA BTJO %>FA,R48,$FFC5
+FFCB: 44 FA 8A    OR R250,R138
+FFCE: FA          TRAP 5
+FFCF: B4          INV A
+FFD0: FB          TRAP 4
+FFD1: 4C FB 55    MPY R251,R85
+FFD4: FB          TRAP 4
+FFD5: 66 FB       BTJO B,A,$FFD3
+FFD7: 87 FB 99    BTJZP A,P251,$FF73
+FFDA: FB          TRAP 4
+FFDB: DF FC       RLC R252
+FFDD: E1 FD       JN $FFDC
+FFDF: 0D          LDSP
+FFE0: FD          TRAP 2
+FFE1: 29 FD       ADC %>FD,A
+FFE3: 3D FD       CMP R253,B
+FFE5: C2          DEC B
+FFE6: FE          TRAP 1
+FFE7: 8E FE CF    CALL $FECF
+FFEA: FE          TRAP 1
+FFEB: DC FF       RR R255
+FFED: 2C FF       MPY %>FF,A
+FFEF: 3A FF       SUB R255,B
+FFF1: 84 FF       ORP A,P255
+FFF3: 8E FF FF    CALL $FFFF
+FFF6: F1          TRAP 14
+FFF7: BC          RR A
+FFF8: F1          TRAP 14
+FFF9: C1          TSTB
+FFFA: FF          TRAP 0
+FFFB: FF          TRAP 0
+FFFC: F3          TRAP 12
+FFFD: 85 F0       XORP A,P240
+FFFF: 00          NOP
